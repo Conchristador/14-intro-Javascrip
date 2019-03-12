@@ -1,14 +1,14 @@
-let tableData = data;
+var tableData = data;
 
-let tbody = d3.select("tbody");
+var tbody = d3.select("tbody");
 
 function table(data) {
   tbody.html("");
 
   data.forEach((dataRow) => {
-    let row = tbody.append("tr");
+    var row = tbody.append("tr");
     Object.values(dataRow).forEach((val) => {
-      let ufoInfo = row.append("td");
+      var ufoInfo = row.append("td");
         ufoInfo.text(val);
       }
     );
@@ -18,8 +18,8 @@ function table(data) {
 function buttonClick() {
 
  d3.event.preventDefault();
-  let date = d3.select("#datetime").property("value");
-  let filteredData = tableData;
+  var date = d3.select("#datetime").property("value");
+  var filteredData = tableData;
   if (date) {
     filteredData = filteredData.filter(row => row.datetime === date);
   }
